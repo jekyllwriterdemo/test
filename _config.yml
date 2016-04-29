@@ -1,20 +1,21 @@
----
-layout: default
----
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-{% for tag in site.tags %}
-  {% assign t = tag | first %}
-  {% assign posts = tag | last %}
-
-<div id="tag-{{ t | replace: ' ', '_' }}">{{ t }}</div>
-<ul>
-{% for post in posts %}
-  {% if post.tags contains t %}
-  <li>
-    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    <span class="date">{{ post.date | date: "%B %-d, %Y"  }}</span>
-  </li>
-  {% endif %}
-{% endfor %}
-</ul>
-{% endfor %}
+# Site settings
+title: Your awesome title
+author: Jekyll Writer
+description: > # this means to ignore newlines until "baseurl:"
+  This theme is disigned based on Mailbox Blog, and licensed under MIT.
+  This theme is also default theme for new site created by Jekyll Writer.
+permalink: /:year/:month/:day/:title/
+paginate: 6
+paginate_path: "/page/:num/"
+twitter_username: jekyllwriter
+github_username:  jekyllwriter
+gems: [jekyll-paginate]
+markdown: kramdown
+baseurl: "/test"
